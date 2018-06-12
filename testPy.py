@@ -16,7 +16,7 @@ print(SparkFiles.getRootDirectory())
 print(help('modules'))
 print('\n'.join(sys.path))
 sys.path.append('/mnt/mesos/sandbox')
-import /mnt/mesos/sandbox/sparkling-water-2.2.16 as h2o
+import .sparkling-water-2.2.16 as h2o
 
 # Initiate H2OContext
 hc = H2OContext.getOrCreate(spark)
