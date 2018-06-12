@@ -1,5 +1,5 @@
-from pysparkling import *
 from pyspark.sql import SparkSession
+from pysparkling import *
 
 
 # Initiate SparkSession
