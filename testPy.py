@@ -2,10 +2,10 @@ from pyspark.sql import SparkSession
 from pyspark import SparkConf, SparkContext
 
 # Initiate SparkSession
-    spark = SparkSession\
-        .builder\
-        .appName("PythonPi")\
-        .getOrCreate()
+spark = SparkSession\
+    .builder\
+    .appName("PythonPi")\
+    .getOrCreate()
 
 spark.sparkContext.addPyFile("sparkling-water-2.2.16.zip")
 h2o = __import__("sparkling-water-2.2.16.zip")
