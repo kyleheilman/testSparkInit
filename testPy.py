@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark import SparkConf, SparkContext
+from pyspark import SparkConf, SparkContext, SparkFiles
 
 # Initiate SparkSession
 spark = SparkSession\
@@ -8,6 +8,9 @@ spark = SparkSession\
     .getOrCreate()
 
 spark.sparkContext.addPyFile("/mnt/mesos/sandbox/sparkling-water-2.2.16.zip")
+
+sys.path.insert(0,SparkFiles.getRootDirectory())
+import sparkling-water-2.2.16 as h2o
 
 # Initiate H2OContext
 hc = H2OContext.getOrCreate(spark)
