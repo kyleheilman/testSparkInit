@@ -1,8 +1,15 @@
 
 from pyspark.sql import SparkSession
+from pyspark import SparkConf, SparkContext
 
 # Initiate SparkSession
 spark = SparkSession.builder.appName("App name").getOrCreate()
+conf = (SparkConf()
+         .setMaster("local")
+         .setAppName("My app")
+         .set("spark.executor.memory", "1g"))
+sc = SparkContext(conf = conf)
+
 spark.addPyFile("/opt/spark/dist/sparkling-water-2.2.16.zip")
 h2o = __import__("sparkling-water-2.2.16.zip")
 
