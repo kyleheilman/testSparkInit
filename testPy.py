@@ -4,7 +4,7 @@ from pyspark.sql import SparkSession
 
 # Initiate SparkSession
 spark = SparkSession.builder.appName("App name").getOrCreate()
-spark.addPyFile("sparkling-water-2.2.16.zip")
+spark.addPyFile("/opt/spark/dist/sparkling-water-2.2.16.zip")
 import "sparkling-water-2.2.16.zip" as h2o
 
 # Initiate H2OContext
