@@ -8,7 +8,6 @@ spark = SparkSession\
     .getOrCreate()
 
 spark.sparkContext.addPyFile("/mnt/mesos/sandbox/sparkling-water-2.2.16.zip")
-import sparkling-water-2.2.16 as h2o
 
 # Initiate H2OContext
 hc = H2OContext.getOrCreate(spark)
