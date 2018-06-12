@@ -8,7 +8,7 @@ conf = (SparkConf()
          .set("spark.executor.memory", "1g"))
 sc = SparkContext(conf = conf)
 
-sc.addPyFile("/opt/spark/dist/sparkling-water-2.2.16.zip")
+sc.addPyFile("sparkling-water-2.2.16.zip")
 h2o = __import__("sparkling-water-2.2.16.zip")
 
 # Initiate H2OContext
