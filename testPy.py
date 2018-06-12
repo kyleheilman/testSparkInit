@@ -10,7 +10,7 @@ spark = SparkSession\
 
 spark.sparkContext.addPyFile("/mnt/mesos/sandbox/sparkling-water-2.2.16.zip")
 
-sys.path.insert(0,"/mnt/mesos/sandbox")
+sys.path.insert(0,"/mnt/mesos/sandbox/sparkling-water-2.2.16")
 print(SparkFiles.getRootDirectory())
 print(help('modules'))
 print('\n'.join(sys.path))
