@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark import SparkConf, SparkContext, SparkFiles
+import sys
 
 # Initiate SparkSession
 spark = SparkSession\
