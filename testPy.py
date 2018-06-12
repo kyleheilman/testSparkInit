@@ -1,6 +1,4 @@
 from pyspark.sql import SparkSession
-from pysparkling import *
-
 
 # Initiate SparkSession
 spark = SparkSession.builder.appName("App name").getOrCreate()
