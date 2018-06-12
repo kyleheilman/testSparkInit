@@ -12,6 +12,8 @@ spark.sparkContext.addPyFile("/mnt/mesos/sandbox/sparkling-water-2.2.16.zip")
 
 sys.path.insert(0,SparkFiles.getRootDirectory())
 print(SparkFiles.getRootDirectory())
+print(help('modules'))
+print('\n'.join(sys.path))
 h2o = __import__("sparkling-water-2.2.16")
 
 # Initiate H2OContext
