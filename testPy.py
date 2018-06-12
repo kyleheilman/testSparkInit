@@ -2,13 +2,12 @@ from pyspark.sql import SparkSession
 from pyspark import SparkConf, SparkContext
 
 # Initiate SparkSession
-conf = (SparkConf()
-         .setMaster("local")
-         .setAppName("My app")
-         .set("spark.executor.memory", "1g"))
-sc = SparkContext(conf = conf)
+    spark = SparkSession\
+        .builder\
+        .appName("PythonPi")\
+        .getOrCreate()
 
-sc.addPyFile("sparkling-water-2.2.16.zip")
+spark.sparkContext.addPyFile("sparkling-water-2.2.16.zip")
 h2o = __import__("sparkling-water-2.2.16.zip")
 
 # Initiate H2OContext
