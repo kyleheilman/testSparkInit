@@ -21,7 +21,7 @@ from pysparkling import *
 # Initiate H2OContext
 hc = H2OContext.getOrCreate(spark)
 
-spark.textFile("s3n://supergloospark/baby_names.csv").count()
+spark.sparkContext.textFile("s3n://supergloospark/baby_names.csv").count()
 
 # Stop H2O and Spark services
 h2o.cluster().shutdown()
