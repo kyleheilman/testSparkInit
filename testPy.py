@@ -17,6 +17,7 @@ print(help('modules'))
 print('\n'.join(sys.path))
 
 import h2o
+from pysparkling import *
 # Initiate H2OContext
 hc = H2OContext.getOrCreate(spark)
 
