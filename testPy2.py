@@ -20,6 +20,13 @@ from pysparkling import *
 # Initiate H2OContext
 hc = H2OContext.getOrCreate(spark)
 
+
+hadoopConf = spark.sparkContext.hadoopConfiguration;
+ 
+hadoopConf.set("fs.s3.impl", "org.apache.hadoop.fs.s3native.NativeS3FileSystem")
+hadoopConf.set("fs.s3.awsAccessKeyId", "test")
+hadoopConf.set("fs.s3.awsSecretAccessKey", "test")
+
 pFile = spark.read.orc("s3a://dfs-lab13-ace/testLarge3/orctestdata/")
 
 h2oFrame = h2oContext.asH2OFrame(pFile)
