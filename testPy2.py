@@ -23,7 +23,7 @@ hc = H2OContext.getOrCreate(spark)
 
 pFile = spark.read.orc("s3a://dfs-lab13-ace/testLarge3/orctestdata/")
 
-h2oFrame = h2oContext.asH2OFrame(pFile)
+h2oFrame = hc.asH2OFrame(pFile)
 
 # Stop H2O and Spark services
 h2o.cluster().shutdown()
