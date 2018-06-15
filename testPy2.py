@@ -19,8 +19,6 @@ import h2o
 from pysparkling import *
 # Initiate H2OContext
 hc = H2OContext.getOrCreate(spark)
- 
-spark.sparkContext._jsc.hadoopConfiguration().set("fs.s3.impl", "org.apache.hadoop.fs.s3native.NativeS3FileSystem")
 
 
 pFile = spark.read.orc("s3a://dfs-lab13-ace/testLarge3/orctestdata/")
